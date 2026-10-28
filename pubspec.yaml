@@ -1,0 +1,49 @@
+name: visual_assist
+description: Offline visual assistance for blind users - YOLO11 pinhole distance.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+  flutter: '>=3.29.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # ML inference
+  tflite_flutter: ^0.11.0
+  image: ^4.3.0
+
+  # Device I/O
+  camera: ^0.11.0+2
+  flutter_tts: ^4.2.0
+  permission_handler: ^11.3.1
+  vibration: ^2.0.0
+  path_provider: ^2.1.4
+
+  # Phase 1: SOS feature
+  shared_preferences: ^2.2.3
+  flutter_secure_storage: ^9.2.2
+  geolocator: ^13.0.1
+  another_telephony: ^0.4.0
+  mailer: ^6.2.0
+
+  # Phase 4: Gemini scene description
+  google_generative_ai: ^0.4.6
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/yolo11n_int8_320.tflite
+    - assets/yolov8n_oiv7_int8_320.tflite
+    - assets/door_yolov8_float16_320.tflite
+    - assets/midas_v2_1_small_int8_256.tflite
+    - assets/deeplabv3_pascal_voc_257.tflite
